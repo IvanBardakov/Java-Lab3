@@ -41,4 +41,22 @@ class ArrayOfPoints1D extends AbstractArrayOfPoints {
             points = newPoints;
         }
     }
+
+    @Override
+    public void test() {
+        System.out.println("Testing ArrayOfPoints1D");
+        addPoint(1.0, 2.0);
+        addPoint(3.0, 4.0);
+        System.out.println("Count: " + count());
+        System.out.println("Point 0: (" + getX(0) + ", " + getY(0) + ")"); // (1.0, 2.0)
+        setPoint(1, 5.0, 6.0);
+        System.out.println("Point 1: (" + getX(1) + ", " + getY(1) + ")"); // (5.0, 6.0)
+        removeLast();
+        System.out.println("Count after remove: " + count()); // Should be 1
+        System.out.println("Point 0: (" + getX(0) + ", " + getY(0) + ")"); // (1.0, 2.0)
+        removeLast();
+        System.out.println("Final count: " + count());
+        System.out.println("Test complete\n");
+    }
+
 }
