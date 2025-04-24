@@ -99,21 +99,4 @@ public class LinkedListWeather extends AbstractWeather {
             }
         }
     }
-
-    /**
-     * Indicates whether some other object is "equal to" this one.
-     * Two {@code LinkedListWeather} objects are considered equal if they have the same season,
-     * comment, and the same list of days (in the same order).
-     *
-     * @param obj the object to compare with
-     * @return true if the objects are equal, false otherwise
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof LinkedListWeather other)) return false;
-        return Objects.equals(getSeason(), other.getSeason()) &&
-                Objects.equals(getComment(), other.getComment()) &&
-                Objects.deepEquals(getDays(), other.getDays());
-    }
-    
 }
