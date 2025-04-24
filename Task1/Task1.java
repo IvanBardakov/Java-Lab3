@@ -17,39 +17,30 @@ public class Task1 {
      * @param args command-line arguments (not used)
      */
     public static void main(String[] args) {
-        // Create an array of Day objects representing weather data for several days.
-        Day[] days = new Day[] {
+        Day[] days = new Day[]{
                 new Day(LocalDate.of(2025, 7, 1), 25.0, "Sunny day"),
                 new Day(LocalDate.of(2025, 7, 2), 28.0, "Hot and humid"),
                 new Day(LocalDate.of(2025, 7, 3), 22.0, "Cloudy with a chance of rain"),
                 new Day(LocalDate.of(2025, 7, 4), 20.0, "Light rain")
         };
 
-        // Create an ArrayWeather instance with a predefined weather sequence.
         ArrayWeather aw = new ArrayWeather("Summer", "Hot and Sunny", days);
-        System.out.println("-- ArrayWeather --");
-        System.out.println(aw);
+        WeatherPrinter.printWeather(aw);
 
-        // Create a LinkedListWeather instance and set the weather sequence.
         LinkedListWeather lw = new LinkedListWeather("Summer", "Hot and Sunny");
         lw.setDays(days);
+        WeatherPrinter.printWeather(lw);
 
-        // Use SearchUtils to calculate average temperature, find the day with max temperature,
-        // and find the day with the longest comment.
         System.out.println("Average temperature: " + SearchUtils.averageTemperature(aw));
         System.out.println("Day with max temperature: " + SearchUtils.dayWithMaxTemperature(lw));
         System.out.println("Day with longest comment: " + SearchUtils.dayWithLongestComment(aw));
         System.out.println();
 
-        // Retrieve the days from the ArrayWeather and sort them by temperature in descending order.
         Day[] arr = aw.getDays();
         Arrays.sort(arr);
-        System.out.println("-- Sorted by temperature desc --");
-        for (Day d : arr) System.out.println(d);
+        WeatherPrinter.printSortedDays(arr, "Sorted by temperature desc");
 
-        // Sort the days by comment using CommentComparator.
         Arrays.sort(arr, new CommentComparator());
-        System.out.println("-- Sorted by comment --");
-        for (Day d : arr) System.out.println(d);
+        WeatherPrinter.printSortedDays(arr, "Sorted by comment");
     }
 }

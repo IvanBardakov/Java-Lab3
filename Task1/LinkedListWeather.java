@@ -8,7 +8,9 @@ import java.util.Objects;
  */
 public class LinkedListWeather extends AbstractWeather {
 
-    /** The head node of the singly linked list storing the days. */
+    /**
+     * The head node of the singly linked list storing the days.
+     */
     private Node head;
 
     /**
@@ -33,7 +35,7 @@ public class LinkedListWeather extends AbstractWeather {
      * Constructs a new {@code LinkedListWeather} object with the specified season and comment.
      * The linked list for storing days is initially empty.
      *
-     * @param season the season associated with the weather data
+     * @param season  the season associated with the weather data
      * @param comment a comment or description about the weather
      */
     public LinkedListWeather(String season, String comment) {
@@ -113,4 +115,5 @@ public class LinkedListWeather extends AbstractWeather {
                 Objects.equals(getComment(), other.getComment()) &&
                 Objects.deepEquals(getDays(), other.getDays());
     }
+    
 }

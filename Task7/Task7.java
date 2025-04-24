@@ -4,7 +4,7 @@ public class Task7 {
     public static void main(String[] args) {
         double a = 0;
         double b = Math.PI;
-        double precision = 0.01;
+        double precision = 0.1;
 
         Integrable sinFunc = Math::sin;
         TrapezoidIntegrable sinTrap = new TrapezoidIntegrable(sinFunc);

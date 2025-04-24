@@ -9,21 +9,27 @@ import java.util.Objects;
  */
 public class Day implements Comparable<Day> {
 
-    /** The date of the weather observation. */
+    /**
+     * The date of the weather observation.
+     */
     private LocalDate date;
 
-    /** The recorded temperature on the given date. */
+    /**
+     * The recorded temperature on the given date.
+     */
     private double temperature;
 
-    /** A brief comment or description of the weather. */
+    /**
+     * A brief comment or description of the weather.
+     */
     private String comment;
 
     /**
      * Constructs a new {@code Day} object with the specified date, temperature, and comment.
      *
-     * @param date the date of the weather data
+     * @param date        the date of the weather data
      * @param temperature the recorded temperature
-     * @param comment a description or note about the weather
+     * @param comment     a description or note about the weather
      */
     public Day(LocalDate date, double temperature, String comment) {
         this.date = date;
@@ -36,53 +42,65 @@ public class Day implements Comparable<Day> {
      *
      * @return the {@link LocalDate} of this record
      */
-    public LocalDate getDate() { return date; }
+    public LocalDate getDate() {
+        return date;
+    }
 
     /**
      * Sets the date for this weather record.
      *
      * @param date the {@link LocalDate} to set
      */
-    public void setDate(LocalDate date) { this.date = date; }
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
     /**
      * Returns the temperature recorded on this day.
      *
      * @return the temperature as a double
      */
-    public double getTemperature() { return temperature; }
+    public double getTemperature() {
+        return temperature;
+    }
 
     /**
      * Sets the temperature for this day.
      *
      * @param temperature the new temperature value
      */
-    public void setTemperature(double temperature) { this.temperature = temperature; }
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
 
     /**
      * Returns the weather comment for this day.
      *
      * @return the comment as a String
      */
-    public String getComment() { return comment; }
+    public String getComment() {
+        return comment;
+    }
 
     /**
      * Sets the comment describing the weather for this day.
      *
      * @param comment the new comment to set
      */
-    public void setComment(String comment) { this.comment = comment; }
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
 
     /**
      * Compares this day to another based on temperature, in descending order.
      *
      * @param other the {@code Day} object to compare to
      * @return a negative integer, zero, or a positive integer as this day's temperature
-     *         is greater than, equal to, or less than the other day's temperature
+     * is greater than, equal to, or less than the other day's temperature
      */
     @Override
     public int compareTo(Day other) {
-        return Double.compare(other.temperature, this.temperature); // descending
+        return Double.compare(other.temperature, this.temperature);
     }
 
     /**
